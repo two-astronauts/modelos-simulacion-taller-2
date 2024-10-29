@@ -7,8 +7,8 @@ var end = false
 
 var values = []
 
-const validateEnd = (theX) => {
-    return values.some((value) => value === theX)
+const validateEnd = (ri) => {
+    return values.some((value) => value === ri)
 }
 
 while (!end) {
