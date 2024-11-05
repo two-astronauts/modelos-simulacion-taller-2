@@ -24,6 +24,7 @@ const suma = values.reduce((acc, val) => acc + val, 0)
 const mediaMuestral = suma / values.length
 
 // Prueba de la media para la serie generada
+// Verificar si la media observada de los números está cerca de la media teórica para una distribución uniforme entre 0 y 1, que es 0.5
 function pruebaMedia(serie) {
     const n = serie.length
     const mediaEsperada = 0.5 // Valor esperado en [0,1]
@@ -72,6 +73,7 @@ function pruebaVarianza(serie) {
 }
 
 // Prueba de uniformidad usando chi-cuadrado
+// Dividir el rango en subintervalos y verificar si los números se distribuyen aproximadamente igual en ellos
 function pruebaChiCuadrado(serie, k) {
     const n = serie.length
     const frecuenciaEsperada = n / k
@@ -84,6 +86,7 @@ function pruebaChiCuadrado(serie, k) {
     }
 
     // Calcular el valor de chi-cuadrado
+    // Contamos cuántos números caen en cada intervalo y calculamos el estadístico 𝜒2
     let chiCuadrado = 0
     for (let i = 0; i < k; i++) {
         chiCuadrado += Math.pow(frecuenciasObservadas[i] - frecuenciaEsperada, 2) / frecuenciaEsperada
@@ -155,5 +158,5 @@ const resultadoKS = pruebaKolmogorovSmirnov(values);
 console.log("Periodo de la serie:", values.length)
 console.log("Resultado de la prueba de media:", resultadoPruebaMedia)
 console.log("Resultado de la prueba de varianza:", resultadoPruebaVarianza)
-console.log("Resultado de la prueba de chi-cuadrado:", resultadoChiCuadrado)
-console.log("Resultado de la prueba de Kolmogorov-Smirnov:", resultadoKS)
+console.log("Resultado de la prueba de uniformidad chi-cuadrado:", resultadoChiCuadrado)
+console.log("Resultado de la prueba de uniformidad Kolmogorov-Smirnov:", resultadoKS)
