@@ -16,7 +16,9 @@ while (!end && values.length !== 100) {
     const ri = xi / (m - 1)
     x = xi
     end = validateEnd(ri)
-    values.push(ri)
+    if (!end) {
+        values.push(ri)
+    }
 }
 
 // Prueba de uniformidad usando chi-cuadrado

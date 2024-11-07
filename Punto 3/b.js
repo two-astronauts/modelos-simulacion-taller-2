@@ -32,7 +32,7 @@ function pruebaMedia(serie) {
     const mediaEsperada = 0.5 // Valor esperado en [0,1]
     const varianza = 1 / 12 // Varianza teórica en [0,1]
     const desviacion = Math.sqrt(varianza)
-
+ 
     // Intervalo de confianza al 95%
     const z = 1.96 // Valor z para el intervalo al 95%
     const limiteInferior = mediaEsperada - z * (desviacion / Math.sqrt(n))
@@ -59,9 +59,10 @@ function pruebaVarianza(serie) {
 
     // Calcular los límites del intervalo de confianza al 95%
     const z = 1.96 // Valor Z para el intervalo de confianza al 95%
+    // Fórmula que se utiliza es una estimación para el error estándar de la varianza muestral cuando se está trabajando con una distribución uniforme en el intervalo [0, 1]
     const desviacionVarianza = Math.sqrt(2 * Math.pow(varianzaEsperada, 2) / (n - 1))
-    const limiteInferior = varianzaEsperada - z * desviacionVarianza
-    const limiteSuperior = varianzaEsperada + z * desviacionVarianza
+    const limiteInferior = varianzaEsperada - z * desviacionVarianza // intervalo de confianza para la varianza muestral
+    const limiteSuperior = varianzaEsperada + z * desviacionVarianza // intervalo de confianza para la varianza muestral
 
     const resultado = {
         varianzaMuestral: varianzaMuestral,
@@ -94,7 +95,7 @@ function pruebaChiCuadrado(serie, k) {
         chiCuadrado += Math.pow(frecuenciasObservadas[i] - frecuenciaEsperada, 2) / frecuenciaEsperada
     }
 
-    // Valor crítico de chi-cuadrado para 9 grados de libertad y 95% de confianza
+    // Valor crítico de la tabla de chi-cuadrado para 9 grados de libertad y 95% de confianza
     const valorCritico = 16.919
 
     // Comparación del valor calculado con el valor crítico

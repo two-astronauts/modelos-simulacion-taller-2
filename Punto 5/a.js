@@ -16,7 +16,9 @@ while (!end && values.length !== 200) {
     const ri = xi / (m - 1)
     x = xi
     end = validateEnd(ri)
-    values.push(ri)
+    if (!end) {
+        values.push(ri)
+    }
 }
 
 // Tomamos los valores del 101 al 200, el array inicia en 0 por eso el 100 en el slice
@@ -60,9 +62,10 @@ function pruebaVarianza(serie) {
 
     // Calcular los límites del intervalo de confianza al 95%
     const z = 1.96 // Valor Z para el intervalo de confianza al 95%
+    // Fórmula que se utiliza es una estimación para el error estándar de la varianza muestral cuando se está trabajando con una distribución uniforme en el intervalo [0, 1]
     const desviacionVarianza = Math.sqrt(2 * Math.pow(varianzaEsperada, 2) / (n - 1))
-    const limiteInferior = varianzaEsperada - z * desviacionVarianza
-    const limiteSuperior = varianzaEsperada + z * desviacionVarianza
+    const limiteInferior = varianzaEsperada - z * desviacionVarianza // intervalo de confianza para la varianza muestral
+    const limiteSuperior = varianzaEsperada + z * desviacionVarianza // intervalo de confianza para la varianza muestral
 
     const resultado = {
         varianzaMuestral: varianzaMuestral,
