@@ -83,5 +83,5 @@ const resultadoPruebaVarianza = pruebaVarianza(subValues)
 
 // Mostrar resultados
 console.log("Periodo de la serie:", values.length)
-console.log("Resultado de la prueba de media:", resultadoPruebaMedia)
-console.log("Resultado de la prueba de varianza:", resultadoPruebaVarianza)
+console.log("Resultado de la prueba de media:", JSON.stringify(resultadoPruebaMedia, null, "\t"))
+console.log("Resultado de la prueba de varianza:", JSON.stringify(resultadoPruebaVarianza, null, "\t"))

@@ -142,8 +142,8 @@ const resultadoIndependencia = pruebaIndependenciaCorridas(values);
 
 // Mostrar resultados
 console.log("Periodo de la serie:", values.length)
-console.log("Resultado de la prueba de uniformidad chi-cuadrado:", resultadoChiCuadrado)
-console.log("Resultado de la prueba de uniformidad Kolmogorov-Smirnov:", resultadoKS)
+console.log("Resultado de la prueba de uniformidad chi-cuadrado:", JSON.stringify(resultadoChiCuadrado, null, "\t"))
+console.log("Resultado de la prueba de uniformidad Kolmogorov-Smirnov:", JSON.stringify(resultadoKS, null, "\t"))
 
 console.log("\nPrueba de Independencia (Corridas Arriba y Abajo de la Media):");
 console.log("Media de los datos:", resultadoIndependencia.media);

@@ -143,7 +143,7 @@ const resultadoChiCuadrado = pruebaChiCuadrado(values, k)
 const resultadoKS = pruebaKolmogorovSmirnov(values);
 
 // Mostrar resultados
-console.log("Resultado de la prueba de media:", resultadoPruebaMedia)
-console.log("Resultado de la prueba de varianza:", resultadoPruebaVarianza)
-console.log("Resultado de la prueba de uniformidad chi-cuadrado:", resultadoChiCuadrado)
-console.log("Resultado de la prueba de uniformidad Kolmogorov-Smirnov:", resultadoKS)
+console.log("Resultado de la prueba de media:", JSON.stringify(resultadoPruebaMedia, null, "\t"))
+console.log("Resultado de la prueba de varianza:", JSON.stringify(resultadoPruebaVarianza, null, "\t"))
+console.log("Resultado de la prueba de uniformidad chi-cuadrado:", JSON.stringify(resultadoChiCuadrado, null, "\t"))
+console.log("Resultado de la prueba de uniformidad Kolmogorov-Smirnov:", JSON.stringify(resultadoKS, null, "\t"))
