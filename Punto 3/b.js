@@ -16,7 +16,9 @@ while (!end) {
     const ri = xi / (m - 1)
     x = xi
     end = validateEnd(ri)
-    values.push(ri)
+    if (!end) {
+        values.push(ri)
+    }
 }
 
 // Calculo de la media

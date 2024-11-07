@@ -15,9 +15,11 @@ while (!end) {
     const xi = ((a * x) + c) % m
     const ri = xi / (m - 1)
     x = xi
+    console.log(`x${values.length + 1}: ${xi}, r${values.length + 1}: ${ri}`)
     end = validateEnd(ri)
-    values.push(ri)
-    console.log(`x${values.length}: ${xi}, r${values.length}: ${ri}`)
+    if (!end) {
+        values.push(ri)
+    }
 }
 
-console.log("Ciclo de vida: ", values.length - 1, "Números pseudo-aleatorios")
+console.log("Ciclo de vida: ", values.length, "Números pseudo-aleatorios")
